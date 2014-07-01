@@ -36,3 +36,36 @@ cout<<fixed;
 cout<<"Item one costs $"<<static_cast<float>(ItmOne)/100.0<<endl;
 
 
+
+
+/* 
+ * File:   main.cpp
+ * Author: C. Phillip Lierz
+ * Purpose: Gaddis 7th Edition Chapter X Problem Y Name of Problem
+ * Created on July Z, 2014, 12:00 PM
+ */
+
+//System Libraries
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+//User Libraries
+
+//Global Constants
+
+//Function Prototypes
+
+//Execution
+int main(int argc, char** argv) {
+    //Define Variables
+    
+    //Inputs
+    
+    //Calculations
+    
+    //Outputs
+
+    return 0;
+}
+
