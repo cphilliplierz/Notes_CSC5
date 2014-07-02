@@ -36,7 +36,11 @@ cout<<fixed;
 cout<<"Item one costs $"<<static_cast<float>(ItmOne)/100.0<<endl;
 
 
-
+How to input 
+const char MSIZE=10;//Includes the null terminator
+char month1[MSIZE];//Character array (i.e. character string)
+cin>>month1;
+cout<<month1<<endl;
 
 /* 
  * File:   main.cpp
@@ -69,3 +73,10 @@ int main(int argc, char** argv) {
     return 0;
 }
 
+
+
+    const int MNSIZE=50;//Includes the null terminator
+    char movname[MNSIZE];//name of the movie
+    cin.getline(movname,MNSIZE);
+    cout<<movname;
+    
