@@ -149,11 +149,131 @@ void problem3(){
 //Solution to problem 4
 void problem4(){
     cout<<"In problem # 4"<<endl<<endl;
+    //Define Variables
+    char package;//type of package
+    unsigned short hrsserv,moncharge;//hours of service, monthly charge
+
+    //Inputs
+    cout<<"What ISP package do you have: A, B, or C?"<<endl;
+    cin>>package;
+    cout<<"\nHow many hours of service did you use?"<<endl;
+    cin>>hrsserv;
+
+    //Calculate monthly charge and evaluate
+    if (package==65||package==97){
+        if (hrsserv<=5){
+            moncharge=1995;
+            cout<<setprecision(2)<<fixed<<"Your monthly charge is $"<<static_cast<float>(moncharge)/100<<endl;
+            cout<<"You are using the optimal ISP Package."<<endl<<endl;
+        }
+        else if (hrsserv>5&&hrsserv<20){
+            moncharge=1995+((hrsserv-5)*75);
+            cout<<setprecision(2)<<fixed<<"Your monthly charge is $"<<static_cast<float>(moncharge)/100<<endl;
+            if (hrsserv<=11){
+                cout<<"You are using the optimal ISP Package."<<endl<<endl;
+            }
+            else if (hrsserv>11&&hrsserv<=20){
+                cout<<"To save money, switch to ISP package B."<<endl<<endl;
+            }
+            else{
+                cout<<"Invalid hours of service. Try again."<<endl<<endl;
+            }
+        }
+        else if (hrsserv>20){
+            moncharge=1995+((hrsserv-5)*75)+((hrsserv-20)*25);
+            cout<<setprecision(2)<<fixed<<"Your monthly charge is $"<<static_cast<float>(moncharge)/100<<endl;
+            if (hrsserv==21){
+                cout<<"To save money, switch to ISP package B."<<endl<<endl;
+            }
+            else if (hrsserv>21){
+                cout<<"To save money, switch to ISP package C."<<endl<<endl;
+            }
+            else{
+                cout<<"Invalid hours of service. Try again."<<endl<<endl;   
+            }
+        }
+        else{
+            cout<<"Invalid hours of service. Try again."<<endl<<endl;
+        }
+    }
+    else if (package==66||package==98){
+        if (hrsserv<=11){
+            moncharge=2495;
+            cout<<setprecision(2)<<fixed<<"Your monthly charge is $"<<static_cast<float>(moncharge)/100<<endl;
+            cout<<"To save money, switch to ISP package A."<<endl;
+        }
+        else if (hrsserv>11&&hrsserv<=15){
+            moncharge=2495;
+            cout<<setprecision(2)<<fixed<<"Your monthly charge is $"<<static_cast<float>(moncharge)/100<<endl;
+            cout<<"You are using the optimal ISP Package."<<endl<<endl;
+        }
+        else if (hrsserv>15&&hrsserv<=21){
+            moncharge=2495+((hrsserv-15)*75);
+            cout<<setprecision(2)<<fixed<<"Your monthly charge is $"<<static_cast<float>(moncharge)/100<<endl;
+            cout<<"You are using the optimal ISP Package."<<endl<<endl;
+        }
+        else if (hrsserv>21&&hrsserv<=25){
+            moncharge=2495+((hrsserv-15)*75);
+            cout<<setprecision(2)<<fixed<<"Your monthly charge is $"<<static_cast<float>(moncharge)/100<<endl;
+            cout<<"To save money, switch to ISP package C."<<endl<<endl;
+        }
+        else if (hrsserv>25){
+            moncharge=2495+((hrsserv-15)*75)-((hrsserv-25)*25);
+            cout<<setprecision(2)<<fixed<<"Your monthly charge is $"<<static_cast<float>(moncharge)/100<<endl;
+            cout<<"To save money, switch to ISP package C."<<endl<<endl;
+        }
+        else{
+            cout<<"Invalid hours of service. Try again."<<endl<<endl;
+        }
+    }
+    else if (package==67||package==99){
+        moncharge=2995;
+        cout<<setprecision(2)<<fixed<<"Your monthly charge is $"<<static_cast<float>(moncharge)/100<<endl;
+        if (hrsserv<=11){
+            cout<<"To save money, switch to ISP package A."<<endl<<endl;
+        }
+        else if (hrsserv>11&&hrsserv<=21){
+            cout<<"To save money, switch to ISP package B."<<endl<<endl;
+        }
+        else if (hrsserv>21){
+            cout<<"You are using the optimal ISP package."<<endl<<endl;
+        }
+        else{
+            cout<<"Invalid hours of service. Try again."<<endl<<endl;
+        }
+    }
+    else{
+        cout<<"Invalid entry. Try again."<<endl<<endl;
+    }
 }
 
 //Solution to problem 5
 void problem5(){
     cout<<"In problem # 5"<<endl<<endl;
+    //Define Variables
+    unsigned short hrswork, ratepay;//hours worked and rate of pay
+    unsigned short paycheck=0;//total pay for the week
+    //Inputs
+    cout<<"What is your rate of pay?"<<endl;
+    cin>>ratepay;
+    cout<<"What are the total number of hours you worked this week?"<<endl;
+    cin>>hrswork;
+
+    //Calculations
+    if (hrswork<=40){
+        paycheck=ratepay*hrswork;
+    }
+    else if (hrswork>40&&hrswork<=50){
+        paycheck=(ratepay*40)+((hrswork-40)*ratepay*2);
+    }
+    else if (hrswork>50){
+        paycheck=(ratepay*60)+((hrswork-50)*ratepay*3);
+    }
+    else{
+        cout<<"Invalid hours. Try again."<<endl<<endl;
+    }
+    //Outputs
+    cout<<"Your paycheck for this week is $"<<paycheck<<".00"<<endl<<endl;
 }
 
 //Solution to problem 6
