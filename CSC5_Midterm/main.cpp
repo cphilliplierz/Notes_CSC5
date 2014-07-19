@@ -296,10 +296,10 @@ void problem6(){
         for (int p=1;p<=i;p++){
             factofi=factofi*p;
         }
-        approxE+=pow(exponent,i)/factofi;
+        approxE+=(pow(exponent,i))/factofi;
     }
     //Output the approx ans
-    cout<<"The approximate value of e^x is "<<approxE<<endl<<endl;
+    cout<<setprecision(3)<<fixed<<"The approximate value of e^x is "<<static_cast<float>(approxE)<<endl<<endl;
 }
 
 void def(int inN){
